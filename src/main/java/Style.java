@@ -1,3 +1,4 @@
+package main.java;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -34,7 +35,7 @@ public class Style {
 		styles[4] = new Style(90, Color.black, 24, 10);	// style for item-level 4
 	}
 
-	public static  getStyle(Styleint level) {
+	public static Style getStyle(int level) {
 		if (level >= styles.length) {
 			level = styles.length - 1;
 		}
