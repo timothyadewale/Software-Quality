@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+	private String showTitle; // title of the presentation
+	private ArrayList<Slide> showList = null; // an ArrayList with Slides
+	private int currentSlideNumber = 0; // the slidenummer of the current Slide
+	private SlideViewerComponent slideViewComponent = null; // the viewcomponent of the Slides
+
+	public Presentation() {
+		slideViewComponent = null;
+		clear();
+	}
+
+
+
+@enduml

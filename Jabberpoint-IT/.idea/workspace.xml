@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d5a2bc2c-6a2c-4fca-b065-cf7178bd2231" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/bin/AboutBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AboutBox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Accessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Accessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/BitmapItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/BitmapItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/DemoPresentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/DemoPresentation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/JabberPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/JabberPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/KeyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/KeyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MenuController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MenuController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MenuController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MenuController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MenuController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MenuController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MenuController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MenuController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MenuController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MenuController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MenuController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MenuController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MenuController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MenuController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MenuController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MenuController$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Presentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Presentation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Slide.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Slide.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/SlideItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/SlideItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/SlideViewerComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/SlideViewerComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/SlideViewerFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/SlideViewerFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/SlideViewerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/SlideViewerFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Style.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Style.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/TextItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/TextItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/XMLAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/XMLAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2de0DCxeOWK9I4cSNIx13YxiwE5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/timin/OneDrive/Desktop/Software Quality/Jabberpoint Assignment/Jabberpoint-IT&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Jabberpoint-IT" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Jabberpoint-IT" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d5a2bc2c-6a2c-4fca-b065-cf7178bd2231" name="Changes" comment="" />
+      <created>1710353114869</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710353114869</updated>
+      <workItem from="1710353115967" duration="37000" />
+      <workItem from="1710353170844" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
