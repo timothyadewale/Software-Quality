@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Slide
 {
-    private static final int WIDTH = 1200;
-    private static final int HEIGHT = 800;
+    static final int WIDTH = 1200;
+    static final int HEIGHT = 800;
     private String title;
     private List<SlideItem> items;
 

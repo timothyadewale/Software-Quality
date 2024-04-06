@@ -5,12 +5,10 @@ import java.awt.Font;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
+import javax.swing.*;
 
-public class SlideViewerComponent extends JComponent
+public class SlideViewerComponent extends JComponent implements PresentationObserver
 {
-
     private static final long serialVersionUID = 227L;
 
     private static final Color BACKGROUND_COLOR = Color.white;
@@ -22,17 +20,26 @@ public class SlideViewerComponent extends JComponent
     private static final int Y_POSITION = 20;
     private static final Dimension PREFERRED_SIZE = new Dimension (Slide.WIDTH, Slide.HEIGHT);
 
+    private Presentation presentation;
     private Slide slide;
-    private final Font labelFont;
-    private final Presentation presentation;
-    private final JFrame frame;
+    // Initialize labelFont directly at declaration to ensure it's always initialized
+    private final Font labelFont = new Font (FONT_NAME, FONT_STYLE, FONT_HEIGHT);
+
+    // Optional: If frame reference is not necessary, consider removing it
+    private JFrame frame; // Keep this if you need a reference to the parent JFrame, make it non-final if not always used
 
     public SlideViewerComponent (Presentation presentation, JFrame frame)
     {
         this.presentation = presentation;
-        this.frame = frame;
-        this.labelFont = new Font (FONT_NAME, FONT_STYLE, FONT_HEIGHT);
+        this.frame = frame; // Assign the frame if passed, can be null
+        presentation.attach (this);
         setBackground (BACKGROUND_COLOR);
+    }
+
+    // If you have cases where SlideViewerComponent is instantiated without a JFrame, consider overloading the constructor
+    public SlideViewerComponent (Presentation presentation)
+    {
+        this (presentation, null); // Call the primary constructor with 'null' for the frame
     }
 
     @Override
@@ -41,10 +48,12 @@ public class SlideViewerComponent extends JComponent
         return PREFERRED_SIZE;
     }
 
-    public void updateSlide (Slide newSlide)
+    // Implement update method as required by PresentationObserver
+    @Override
+    public void update (Presentation presentation, Slide currentSlide)
     {
-        this.slide = newSlide;
-        if (newSlide != null)
+        this.slide = currentSlide;
+        if (currentSlide != null && frame != null)
         {
             frame.setTitle (presentation.getTitle ());
         }
@@ -82,7 +91,8 @@ public class SlideViewerComponent extends JComponent
 
     private void drawSlide (Graphics g)
     {
+        // Assuming Slide class has a method to draw itself given a Graphics object
         Rectangle area = new Rectangle (0, Y_POSITION, getWidth (), getHeight () - Y_POSITION);
-        slide.draw (g, area, this);
+        slide.draw (g, area, this); // Ensure Slide has a draw method compatible with this signature
     }
 }

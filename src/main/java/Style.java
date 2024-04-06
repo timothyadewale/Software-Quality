@@ -43,6 +43,10 @@ public class Style
         this.font = new Font (FONT_NAME, Font.BOLD, fontSize);
     }
 
+    public static void createStyles ()
+    {
+    }
+
     @Override
     public String toString ()
     {

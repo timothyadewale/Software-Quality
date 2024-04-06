@@ -2,6 +2,8 @@ package main.java;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyAdapter;
+import java.util.HashMap;
+import java.util.Map;
 
 // Interface for handling key actions
 interface KeyActionHandler

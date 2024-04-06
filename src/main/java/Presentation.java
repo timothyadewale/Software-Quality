@@ -6,33 +6,33 @@ import java.util.List;
 public class Presentation
 {
     private String showTitle; // Title of the presentation
-    private ArrayList<Slide> showList; // An ArrayList with Slides
-    private int currentSlideNumber; // The slide number of the current Slide
+    private ArrayList<Slide> showList = new ArrayList<> (); // An ArrayList with Slides
+    private int currentSlideNumber = -1; // The slide number of the current Slide
 
-    private List<SlideViewerComponent> observers = new ArrayList<> ();
+    private List<PresentationObserver> observers = new ArrayList<> ();
 
-    public Presentation ()
-    {
-        this.showList = new ArrayList<> ();
-        clear ();
-    }
-
-    // Method to attach an observer
-    public void attach (SlideViewerComponent observer)
+    // Attach an observer to the Presentation
+    public void attach (PresentationObserver observer)
     {
         observers.add (observer);
-    }
-
-    // Method to notify all observers of change
-    private void notifyObservers ()
-    {
-        for (SlideViewerComponent observer : observers)
+        // Optionally, you might want to immediately update the observer with the current state
+        if (currentSlideNumber >= 0)
         {
             observer.update (this, getCurrentSlide ());
         }
     }
 
-    // Override the setSlideNumber to notify observers, with validation
+    // Notify all observers of a change
+    private void notifyObservers ()
+    {
+        Slide currentSlide = getCurrentSlide ();
+        for (PresentationObserver observer : observers)
+        {
+            observer.update (this, currentSlide);
+        }
+    }
+
+    // Sets the current slide number and notifies observers
     public void setSlideNumber (int number)
     {
         if (number >= 0 && number < showList.size ())
@@ -42,12 +42,10 @@ public class Presentation
         }
         else
         {
-            // Handle the invalid number case, could log or throw an exception
             System.out.println ("Invalid slide number: " + number);
         }
     }
 
-    // Go to the previous slide unless you're at the beginning of the presentation
     public void prevSlide ()
     {
         if (currentSlideNumber > 0)
@@ -56,7 +54,6 @@ public class Presentation
         }
     }
 
-    // Go to the next slide unless you're at the end of the presentation.
     public void nextSlide ()
     {
         if (currentSlideNumber < (showList.size () - 1))
@@ -65,39 +62,36 @@ public class Presentation
         }
     }
 
-    // Delete the presentation to be ready for the next one.
     public void clear ()
     {
-        showList = new ArrayList<> ();
-        setSlideNumber (-1);
+        showList.clear ();
+        currentSlideNumber = -1;
+        notifyObservers ();
     }
 
-    // Add a slide to the presentation
     public void append (Slide slide)
     {
         showList.add (slide);
-        // Optionally notify observers about the change in the presentation
+        notifyObservers ();
     }
 
-    // Get a slide with a certain slidenumber
     public Slide getSlide (int number)
     {
-        if (number < 0 || number >= getSize ())
+        if (number >= 0 && number < showList.size ())
         {
-            return null;
+            return showList.get (number);
         }
-        return showList.get (number);
+        return null;
     }
 
-    // Give the current slide
     public Slide getCurrentSlide ()
     {
         return getSlide (currentSlideNumber);
     }
 
-    public void exit (int n)
+    public void exit (int status)
     {
-        System.exit (n);
+        System.exit (status);
     }
 
     public int getSize ()
@@ -110,8 +104,19 @@ public class Presentation
         return showTitle;
     }
 
-    public void setTitle (String nt)
+    public void setTitle (String title)
     {
-        showTitle = nt;
+        this.showTitle = title;
+        notifyObservers ();
+    }
+
+    public int getSlideNumber ()
+    {
+        return currentSlideNumber;
+    }
+
+    public List<Slide> getSlides ()
+    {
+        return showList;
     }
 }

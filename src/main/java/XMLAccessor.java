@@ -17,9 +17,15 @@ import java.util.List;
 public class XMLAccessor extends Accessor
 {
 
-    private static final String FONT_SIZE = "fontSize";
+    private static final String FONT_SIZE = "fontSize"; // Example, adjust as necessary
     private static final String ITEM_KIND_TEXT = "text";
     private static final String ITEM_KIND_IMAGE = "image";
+    private static final String SHOWTITLE = "showtitle"; // Correctly defining the constant
+    private static final String SLIDE = "slide"; // Assuming 'slide' is the element name in your XML
+    private static final String ITEM = "item"; // Assuming 'item' is the element name in your XML
+    private static final String LEVEL = "level"; // Assuming 'level' is the attribute name in your XML
+    private static final String KIND = "kind"; // Assuming 'kind' is the attribute name in your XML
+    private static final String SLIDETITLE = "title"; // Assuming 'title' is the element name in your XML for slide titles
 
     public void loadFile (Presentation presentation, String filename)
     {

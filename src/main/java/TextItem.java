@@ -46,26 +46,26 @@ public class TextItem extends SlideItem
     public Rectangle getBoundingBox (Graphics g, ImageObserver observer, float scale, Style style)
     {
         List<TextLayout> layouts = calculateTextLayouts (g, style, scale);
-        int width = 0, height = (int) (style.leading * scale);
+        int width = 0, height = (int) (style.getLeading () * scale);
         for (TextLayout layout : layouts)
         {
             Rectangle2D bounds = layout.getBounds ();
             width = Math.max (width, (int) bounds.getWidth ());
             height += layout.getAscent () + layout.getDescent () + layout.getLeading ();
         }
-        return new Rectangle ((int) (style.indent * scale), 0, width, height);
+        return new Rectangle ((int) (style.getIndent () * scale), 0, width, height);
     }
 
     public void draw (int x, int y, float scale, Graphics g, Style style, ImageObserver observer)
     {
         List<TextLayout> layouts = calculateTextLayouts (g, style, scale);
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor (style.color);
-        float penY = y + (style.leading * scale);
+        g2d.setColor (style.getColor ());
+        float penY = y + (style.getLeading () * scale);
         for (TextLayout layout : layouts)
         {
             penY += layout.getAscent ();
-            layout.draw (g2d, x + (style.indent * scale), penY);
+            layout.draw (g2d, x + (style.getIndent () * scale), penY);
             penY += layout.getDescent () + layout.getLeading ();
         }
     }
@@ -76,7 +76,7 @@ public class TextItem extends SlideItem
         AttributedString attributedString = createAttributedString (style, scale);
         FontRenderContext frc = ((Graphics2D) g).getFontRenderContext ();
         LineBreakMeasurer measurer = new LineBreakMeasurer (attributedString.getIterator (), frc);
-        float wrappingWidth = (Slide.WIDTH - style.indent) * scale;
+        float wrappingWidth = (Slide.WIDTH - style.getIndent ()) * scale;
         while (measurer.getPosition () < text.length ())
         {
             layouts.add (measurer.nextLayout (wrappingWidth));

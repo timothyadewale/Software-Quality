@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class BitmapItem extends SlideItem {
-	private BufferedImage bufferedImage;
+	public BufferedImage bufferedImage;
 	private String imageName;
 
 	protected static final String FILE = "File ";
@@ -40,16 +40,16 @@ public class BitmapItem extends SlideItem {
 
 	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, Style myStyle) {
 		if (bufferedImage == null) return new Rectangle();
-		return new Rectangle((int) (myStyle.indent * scale), 0,
+		return new Rectangle((int) (myStyle.getIndent () * scale), 0,
 				(int) (bufferedImage.getWidth(observer) * scale),
-				((int) (myStyle.leading * scale)) +
+				((int) (myStyle.getLeading () * scale)) +
 						(int) (bufferedImage.getHeight(observer) * scale));
 	}
 
 	public void draw(int x, int y, float scale, Graphics g, Style myStyle, ImageObserver observer) {
 		if (bufferedImage == null) return; // Do nothing if image failed to load
-		int width = x + (int) (myStyle.indent * scale);
-		int height = y + (int) (myStyle.leading * scale);
+		int width = x + (int) (myStyle.getIndent () * scale);
+		int height = y + (int) (myStyle.getLeading () * scale);
 		g.drawImage(bufferedImage, width, height, (int) (bufferedImage.getWidth(observer) * scale),
 				(int) (bufferedImage.getHeight(observer) * scale), observer);
 	}

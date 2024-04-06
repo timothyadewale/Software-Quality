@@ -5,13 +5,38 @@ import java.awt.Frame;
 import java.awt.Menu;
 import java.awt.MenuItem;
 import java.awt.MenuShortcut;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import java.io.IOException;
 
 public class MenuController extends MenuBar
 {
 
     private Frame parent;
     private Presentation presentation;
+
+    // Define the missing constants as String values for menu items
+    private static final String FILE = "File";
+    private static final String OPEN = "Open";
+    private static final String NEW = "New";
+    private static final String SAVE = "Save";
+    private static final String EXIT = "Exit";
+    private static final String VIEW = "View";
+    private static final String NEXT = "Next";
+    private static final String PREV = "Previous";
+    private static final String GOTO = "Go to Slide";
+    private static final String HELP = "Help";
+    private static final String ABOUT = "About JabberPoint";
+
+    // Assuming TESTFILE and SAVEFILE are paths to the presentation files, you should define them as well
+    private static final String TESTFILE = "path/to/test/presentation.xml";
+    private static final String SAVEFILE = "path/to/save/presentation.xml";
+    // Also assuming IOEX and LOADERR are error messages, define them
+    private static final String IOEX = "Input/Output Exception: ";
+    private static final String LOADERR = "Load Error";
+    private static final String SAVEERR = "Save Error";
+    private static final String PAGENR = "Page Number:"; // Assuming it's a prompt for goToSlide
+
 
     public MenuController (Frame frame, Presentation pres)
     {
