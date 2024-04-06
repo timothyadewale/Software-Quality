@@ -2,56 +2,48 @@ package main.java;
 
 import java.awt.Color;
 import java.awt.Font;
-
-/**
- * <p>Style is for Indent, Color, Font and Leading.</p>
- * <p>Direct relation between style-number and item-level:
- * in Slide style if fetched for an item
- * with style-number as item-level.</p>
- *
- * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
- * @version 1.6 2014/05/16 Sylvia Stuurman
- */
+import java.util.ArrayList;
+import java.util.List;
 
 public class Style
 {
-    private static Style[] styles; // de styles
+    private static final List<Style> styles = new ArrayList<> ();
 
-    private static final String FONTNAME = "Helvetica";
-    int indent;
-    Color color;
-    Font font;
-    int fontSize;
-    int leading;
+    private static final String FONT_NAME = "Helvetica";
+    private final int indent;
+    private final Color color;
+    private final Font font;
+    private final int fontSize;
+    private final int leading;
 
-    public static void createStyles ()
+    static
     {
-        styles = new Style[5];
-        // The styles are fixed.
-        styles[0] = new Style (0, Color.red, 48, 20);    // style for item-level 0
-        styles[1] = new Style (20, Color.blue, 40, 10);    // style for item-level 1
-        styles[2] = new Style (50, Color.black, 36, 10);    // style for item-level 2
-        styles[3] = new Style (70, Color.black, 30, 10);    // style for item-level 3
-        styles[4] = new Style (90, Color.black, 24, 10);    // style for item-level 4
+        styles.add (new Style (0, Color.red, 48, 20));
+        styles.add (new Style (20, Color.blue, 40, 10));
+        styles.add (new Style (50, Color.black, 36, 10));
+        styles.add (new Style (70, Color.black, 30, 10));
+        styles.add (new Style (90, Color.black, 24, 10));
     }
 
     public static Style getStyle (int level)
     {
-        if (level >= styles.length)
+        if (level < 0 || level >= styles.size ())
         {
-            level = styles.length - 1;
+            throw new IllegalArgumentException ("Invalid level: " + level);
         }
-        return styles[level];
+        return styles.get (level);
     }
 
-    public Style (int indent, Color color, int points, int leading)
+    private Style (int indent, Color color, int fontSize, int leading)
     {
         this.indent = indent;
         this.color = color;
-        font = new Font (FONTNAME, Font.BOLD, fontSize = points);
+        this.fontSize = fontSize;
         this.leading = leading;
+        this.font = new Font (FONT_NAME, Font.BOLD, fontSize);
     }
 
+    @Override
     public String toString ()
     {
         return "[" + indent + "," + color + "; " + fontSize + " on " + leading + "]";
@@ -59,6 +51,32 @@ public class Style
 
     public Font getFont (float scale)
     {
-        return font.deriveFont (fontSize * scale);
+        return font.deriveFont ((float) fontSize * scale);
+    }
+
+    // Getter methods for the Style properties
+    public int getIndent ()
+    {
+        return indent;
+    }
+
+    public Color getColor ()
+    {
+        return color;
+    }
+
+    public Font getFont ()
+    {
+        return font;
+    }
+
+    public int getFontSize ()
+    {
+        return fontSize;
+    }
+
+    public int getLeading ()
+    {
+        return leading;
     }
 }

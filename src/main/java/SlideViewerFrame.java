@@ -1,47 +1,61 @@
 package main.java;
+
 import java.awt.Dimension;
-import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 
-/**
- * <p>The application window for a slideviewcomponent</p>
- * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
- * @version 1.1 2002/12/17 Gert Florijn
- * @version 1.2 2003/11/19 Sylvia Stuurman
- * @version 1.3 2004/08/17 Sylvia Stuurman
- * @version 1.4 2007/07/16 Sylvia Stuurman
- * @version 1.5 2010/03/03 Sylvia Stuurman
- * @version 1.6 2014/05/16 Sylvia Stuurman
-*/
+public class SlideViewerFrame extends JFrame
+{
+    private static final long serialVersionUID = 3227L;
 
-public class SlideViewerFrame extends JFrame {
-	private static final long serialVersionUID = 3227L;
-	
-	private static final String JABTITLE = "Jabberpoint 1.6 - OU";
-	public final static int WIDTH = 1200;
-	public final static int HEIGHT = 800;
-	
-	public SlideViewerFrame(String title, Presentation presentation) {
-		super(title);
-		SlideViewerComponent slideViewerComponent = new SlideViewerComponent(presentation, this);
-		presentation.setShowView(slideViewerComponent);
-		setupWindow(slideViewerComponent, presentation);
-	}
+    private static final String DEFAULT_TITLE = "Jabberpoint 1.6 - OU";
+    private static final int FRAME_WIDTH = 1200;
+    private static final int FRAME_HEIGHT = 800;
 
-// Setup GUI
-	public void setupWindow(SlideViewerComponent 
-			slideViewerComponent, Presentation presentation) {
-		setTitle(JABTITLE);
-		addWindowListener(new WindowAdapter() {
-				public void windowClosing(WindowEvent e) {
-					System.exit(0);
-				}
-			});
-		getContentPane().add(slideViewerComponent);
-		addKeyListener(new KeyController(presentation)); // add a controller
-		setMenuBar(new MenuController(this, presentation));	// add another controller
-		setSize(new Dimension(WIDTH, HEIGHT)); // Same sizes as Slide has.
-		setVisible(true);
-	}
+    public SlideViewerFrame (Presentation presentation)
+    {
+        super (DEFAULT_TITLE);
+        initializeFrame (presentation);
+    }
+
+    private void initializeFrame (Presentation presentation)
+    {
+        SlideViewerComponent slideViewerComponent = createSlideViewerComponent (presentation);
+        configureWindowListener ();
+        addComponentsToFrame (slideViewerComponent, presentation);
+        setFrameProperties ();
+    }
+
+    private SlideViewerComponent createSlideViewerComponent (Presentation presentation)
+    {
+        SlideViewerComponent slideViewerComponent = new SlideViewerComponent (presentation, this);
+        presentation.setShowView (slideViewerComponent);
+        return slideViewerComponent;
+    }
+
+    private void configureWindowListener ()
+    {
+        addWindowListener (new WindowAdapter ()
+        {
+            @Override
+            public void windowClosing (WindowEvent e)
+            {
+                System.exit (0);
+            }
+        });
+    }
+
+    private void addComponentsToFrame (SlideViewerComponent slideViewerComponent, Presentation presentation)
+    {
+        getContentPane ().add (slideViewerComponent);
+        addKeyListener (new KeyController (presentation));
+        setMenuBar (new MenuController (this, presentation));
+    }
+
+    private void setFrameProperties ()
+    {
+        setSize (new Dimension (FRAME_WIDTH, FRAME_HEIGHT));
+        setVisible (true);
+    }
 }

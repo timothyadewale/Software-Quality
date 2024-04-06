@@ -1,43 +1,48 @@
 package main.java;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyAdapter;
 
-/** <p>This is the KeyController (KeyListener)</p>
- * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
- * @version 1.1 2002/12/17 Gert Florijn
- * @version 1.2 2003/11/19 Sylvia Stuurman
- * @version 1.3 2004/08/17 Sylvia Stuurman
- * @version 1.4 2007/07/16 Sylvia Stuurman
- * @version 1.5 2010/03/03 Sylvia Stuurman
- * @version 1.6 2014/05/16 Sylvia Stuurman
-*/
+// Interface for handling key actions
+interface KeyActionHandler
+{
+    void handleAction ();
+}
 
-public class KeyController extends KeyAdapter {
-	private Presentation presentation; // Commands are given to the presentation
+// KeyController now uses handlers for actions, adhering to OCP and SRP
+public class KeyController extends KeyAdapter
+{
+    private final Presentation presentation;
+    private final Map<Integer, KeyActionHandler> actionHandlers;
 
-	public KeyController(Presentation p) {
-		presentation = p;
-	}
+    public KeyController (Presentation p)
+    {
+        this.presentation = p;
+        this.actionHandlers = new HashMap<> ();
+        initializeHandlers ();
+    }
 
-	public void keyPressed(KeyEvent keyEvent) {
-		switch(keyEvent.getKeyCode()) {
-			case KeyEvent.VK_PAGE_DOWN:
-			case KeyEvent.VK_DOWN:
-			case KeyEvent.VK_ENTER:
-			case '+':
-				presentation.nextSlide();
-				break;
-			case KeyEvent.VK_PAGE_UP:
-			case KeyEvent.VK_UP:
-			case '-':
-				presentation.prevSlide();
-				break;
-			case 'q':
-			case 'Q':
-				System.exit(0);
-				break; // Probably never reached!!
-			default:
-				break;
-		}
-	}
+    private void initializeHandlers ()
+    {
+        actionHandlers.put (KeyEvent.VK_PAGE_DOWN, presentation::nextSlide);
+        actionHandlers.put (KeyEvent.VK_DOWN, presentation::nextSlide);
+        actionHandlers.put (KeyEvent.VK_ENTER, presentation::nextSlide);
+        actionHandlers.put ((int) '+', presentation::nextSlide);
+
+        actionHandlers.put (KeyEvent.VK_PAGE_UP, presentation::prevSlide);
+        actionHandlers.put (KeyEvent.VK_UP, presentation::prevSlide);
+        actionHandlers.put ((int) '-', presentation::prevSlide);
+
+        actionHandlers.put ((int) 'q', () -> System.exit (0));
+        actionHandlers.put ((int) 'Q', () -> System.exit (0));
+    }
+
+    @Override
+    public void keyPressed (KeyEvent keyEvent)
+    {
+        if (actionHandlers.containsKey (keyEvent.getKeyCode ()))
+        {
+            actionHandlers.get (keyEvent.getKeyCode ()).handleAction ();
+        }
+    }
 }
