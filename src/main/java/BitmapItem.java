@@ -26,7 +26,7 @@ public class BitmapItem extends SlideItem {
 			bufferedImage = ImageIO.read(new File(imageName));
 		} catch (IOException e) {
 			System.err.println(FILE + imageName + NOTFOUND);
-			bufferedImage = null; // Assign null to indicate load failure
+			bufferedImage = null; // indicate load failure
 		}
 	}
 

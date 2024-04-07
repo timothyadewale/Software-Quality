@@ -33,7 +33,7 @@ public abstract class Accessor
     abstract public void saveFile (main.java.Presentation presentation, String fn) throws IOException;
 
     // Example method demonstrating the use of the factory method.
-    // This could be part of a client code or another part of your application.
+
     public static void useAccessorExample ()
     {
         Accessor accessor = Accessor.getAccessor ("demo");

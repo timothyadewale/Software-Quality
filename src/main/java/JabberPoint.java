@@ -31,7 +31,7 @@ public class JabberPoint
 
     private static void initializeUI (Presentation presentation)
     {
-        // Assuming SlideViewerFrame constructor now correctly matches the parameters.
+        //  SlideViewerFrame  now  matches the parameters.
         SlideViewerFrame slideViewerFrame = new SlideViewerFrame (presentation, JABVERSION);
         presentation.attach ((PresentationObserver) slideViewerFrame);
     }

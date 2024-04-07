@@ -8,7 +8,7 @@ public class Presentation
 {
     private String showTitle; // Title of the presentation
     private ArrayList<main.java.Slide> showList = new ArrayList<> (); // Slides
-    private int currentSlideNumber = -1; // The slide number of the current Slide
+    private int currentSlideNumber = 1; // The slide number of the current Slide
 
     private List<main.java.PresentationObserver> observers = new ArrayList<> ();
 
@@ -16,7 +16,7 @@ public class Presentation
     public void attach (main.java.PresentationObserver observer)
     {
         observers.add (observer);
-        // Optionally, you might want to immediately update the observer with the current state
+        // update the observer with the current state
         if (currentSlideNumber >= 0)
         {
             observer.update (this, getCurrentSlide ());
