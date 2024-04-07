@@ -5,7 +5,8 @@ import java.awt.Font;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
 
 public class SlideViewerComponent extends JComponent implements PresentationObserver
 {

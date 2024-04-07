@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Style
 {
-    private static final List<Style> styles = new ArrayList<> ();
+    private static final List<Style> STYLES = new ArrayList<> ();
 
     private static final String FONT_NAME = "Helvetica";
     private final int indent;
@@ -18,20 +18,20 @@ public class Style
 
     static
     {
-        styles.add (new Style (0, Color.red, 48, 20));
-        styles.add (new Style (20, Color.blue, 40, 10));
-        styles.add (new Style (50, Color.black, 36, 10));
-        styles.add (new Style (70, Color.black, 30, 10));
-        styles.add (new Style (90, Color.black, 24, 10));
+        STYLES.add (new Style (0, Color.red, 48, 20));
+        STYLES.add (new Style (20, Color.blue, 40, 10));
+        STYLES.add (new Style (50, Color.black, 36, 10));
+        STYLES.add (new Style (70, Color.black, 30, 10));
+        STYLES.add (new Style (90, Color.black, 24, 10));
     }
 
     public static Style getStyle (int level)
     {
-        if (level < 0 || level >= styles.size ())
+        if (level < 0 || level >= STYLES.size ())
         {
             throw new IllegalArgumentException ("Invalid level: " + level);
         }
-        return styles.get (level);
+        return STYLES.get (level);
     }
 
     private Style (int indent, Color color, int fontSize, int leading)
