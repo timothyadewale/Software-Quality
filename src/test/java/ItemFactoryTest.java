@@ -2,7 +2,7 @@ import main.java.BitmapItem;
 import main.java.ItemFactory;
 import main.java.SlideItem;
 import main.java.TextItem;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 
