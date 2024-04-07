@@ -6,27 +6,25 @@
 # separate terms of service, privacy policy, and support
 # documentation
 
-name: SoftwareQualityJabberpointBuild and CodeQL Analysis
+name: SoftwareQualityJabberpointBuild
 
 on:
   push:
-    branches: [ "dev-jabberpoint", "main" ]
+    branches: [ "dev-jabberpoint" ]
   pull_request:
-    branches: [ "dev-jabberpoint", "main" ]
-  schedule:
-    - cron: '15 8 * * 3'
+    branches: [ "dev-jabberpoint" ]
 
 jobs:
-  build-and-analyze:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up JDK 19
+    - name: Set up JDK 20
       uses: actions/setup-java@v3
       with:
-        java-version: '19'
+        java-version: '20'
         distribution: 'temurin'
         cache: 'maven'
 
@@ -42,11 +40,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
-      with:
-        languages: 'java'
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+    - name: Update dependency graph
+      uses: advanced-security/maven-dependency-submission-action@v1
 
