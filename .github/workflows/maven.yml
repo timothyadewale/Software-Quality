@@ -4,18 +4,24 @@
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
-# documentation
+# documentation.
 
-name: SoftwareQualityJabberpointBuild
+name: SoftwareQualityJabberpointBuild and CodeQL Analysis
 
 on:
   push:
-    branches: [ "dev-jabberpoint" ]
+    branches: [ "dev-jabberpoint", "main" ]
   pull_request:
-    branches: [ "dev-jabberpoint" ]
+    branches: [ "dev-jabberpoint", "main" ]
+  schedule:
+    - cron: '15 8 * * 3'
+
+permissions:
+  contents: read
+  security-events: write
 
 jobs:
-  build:
+  build-and-analyze:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +38,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: |
-          ~/.m2
+          ~/.m2/repository
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-m2
@@ -40,6 +46,5 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@v1
-
+    - name: Run Checkstyle
+      run: mvn checkstyle:check
