@@ -6,16 +6,18 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: SoftwareQualityJabberpointBuild
+name: SoftwareQualityJabberpointBuild and CodeQL Analysis
 
 on:
   push:
-    branches: [ "dev-jabberpoint" ]
+    branches: [ "dev-jabberpoint", "main" ]
   pull_request:
-    branches: [ "dev-jabberpoint" ]
+    branches: [ "dev-jabberpoint", "main" ]
+  schedule:
+    - cron: '15 8 * * 3'
 
 jobs:
-  build:
+  build-and-analyze:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +33,8 @@ jobs:
     - name: Cache Maven packages
       uses: actions/cache@v3
       with:
-        path: ~/.m2
+        path: |
+          ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-m2
@@ -39,22 +42,11 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Test with Maven
-      run: mvn test
-
-  codeql-analysis:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      security-events: write
-    steps:
-    - uses: actions/checkout@v3
-
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3 # When available
+      uses: github/codeql-action/init@v3
       with:
-        languages: java
+        languages: 'java'
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3 # When available
+      uses: github/codeql-action/analyze@v3
+
