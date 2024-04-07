@@ -17,15 +17,15 @@ import java.util.List;
 public class XMLAccessor extends Accessor
 {
 
-    private static final String FONT_SIZE = "fontSize"; // Example, adjust as necessary
+    private static final String FONT_SIZE = "fontSize";
     private static final String ITEM_KIND_TEXT = "text";
     private static final String ITEM_KIND_IMAGE = "image";
-    private static final String SHOWTITLE = "showtitle"; // Correctly defining the constant
-    private static final String SLIDE = "slide"; // Assuming 'slide' is the element name in your XML
-    private static final String ITEM = "item"; // Assuming 'item' is the element name in your XML
-    private static final String LEVEL = "level"; // Assuming 'level' is the attribute name in your XML
-    private static final String KIND = "kind"; // Assuming 'kind' is the attribute name in your XML
-    private static final String SLIDETITLE = "title"; // Assuming 'title' is the element name in your XML for slide titles
+    private static final String SHOWTITLE = "showtitle";
+    private static final String SLIDE = "slide";
+    private static final String ITEM = "item";
+    private static final String LEVEL = "level";
+    private static final String KIND = "kind";
+    private static final String SLIDETITLE = "title";
 
     public void loadFile (Presentation presentation, String filename)
     {
@@ -38,7 +38,7 @@ public class XMLAccessor extends Accessor
             loadSlides (presentation, slides);
         } catch (Exception e)
         {
-            e.printStackTrace (); // Consider logging this exception or rethrowing as a custom exception
+            e.printStackTrace ();
         }
     }
 

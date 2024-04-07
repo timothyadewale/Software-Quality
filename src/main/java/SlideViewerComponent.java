@@ -22,24 +22,23 @@ public class SlideViewerComponent extends JComponent implements PresentationObse
 
     private Presentation presentation;
     private Slide slide;
-    // Initialize labelFont directly at declaration to ensure it's always initialized
+    // creating the font
     private final Font labelFont = new Font (FONT_NAME, FONT_STYLE, FONT_HEIGHT);
 
-    // Optional: If frame reference is not necessary, consider removing it
-    private JFrame frame; // Keep this if you need a reference to the parent JFrame, make it non-final if not always used
+    private JFrame frame;
 
     public SlideViewerComponent (Presentation presentation, JFrame frame)
     {
         this.presentation = presentation;
-        this.frame = frame; // Assign the frame if passed, can be null
+        this.frame = frame;
         presentation.attach (this);
         setBackground (BACKGROUND_COLOR);
     }
 
-    // If you have cases where SlideViewerComponent is instantiated without a JFrame, consider overloading the constructor
+
     public SlideViewerComponent (Presentation presentation)
     {
-        this (presentation, null); // Call the primary constructor with 'null' for the frame
+        this (presentation, null);
     }
 
     @Override
@@ -48,7 +47,7 @@ public class SlideViewerComponent extends JComponent implements PresentationObse
         return PREFERRED_SIZE;
     }
 
-    // Implement update method as required by PresentationObserver
+    //method for the PresentationObserver
     @Override
     public void update (Presentation presentation, Slide currentSlide)
     {
@@ -91,8 +90,8 @@ public class SlideViewerComponent extends JComponent implements PresentationObse
 
     private void drawSlide (Graphics g)
     {
-        // Assuming Slide class has a method to draw itself given a Graphics object
+        // drawslide
         Rectangle area = new Rectangle (0, Y_POSITION, getWidth (), getHeight () - Y_POSITION);
-        slide.draw (g, area, this); // Ensure Slide has a draw method compatible with this signature
+        slide.draw (g, area, this);
     }
 }

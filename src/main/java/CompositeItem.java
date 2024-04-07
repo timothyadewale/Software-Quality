@@ -32,7 +32,7 @@ public class CompositeItem extends SlideItem
     @Override
     public Rectangle getBoundingBox (Graphics g, ImageObserver observer, float scale, Style style)
     {
-        // Implementation based on composite items' bounding box calculation
-        return null; // Simplified for example
+        // Implementation based on the composite design pattern
+        return null;
     }
 }

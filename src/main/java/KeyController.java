@@ -5,13 +5,13 @@ import java.awt.event.KeyAdapter;
 import java.util.HashMap;
 import java.util.Map;
 
-// Interface for handling key actions
+// this is Interface for handling of the key actions
 interface KeyActionHandler
 {
     void handleAction ();
 }
 
-// KeyController now uses handlers for actions, adhering to OCP and SRP
+// KeyController will use handlers for actions
 public class KeyController extends KeyAdapter
 {
     private final Presentation presentation;

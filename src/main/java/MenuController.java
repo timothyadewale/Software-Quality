@@ -1,5 +1,4 @@
 package main.java;
-
 import java.awt.MenuBar;
 import java.awt.Frame;
 import java.awt.Menu;
@@ -15,7 +14,7 @@ public class MenuController extends MenuBar
     private Frame parent;
     private Presentation presentation;
 
-    // Define the missing constants as String values for menu items
+    // menu items
     private static final String FILE = "File";
     private static final String OPEN = "Open";
     private static final String NEW = "New";
@@ -28,14 +27,14 @@ public class MenuController extends MenuBar
     private static final String HELP = "Help";
     private static final String ABOUT = "About JabberPoint";
 
-    // Assuming TESTFILE and SAVEFILE are paths to the presentation files, you should define them as well
+    // paths to save the presentation file
     private static final String TESTFILE = "path/to/test/presentation.xml";
     private static final String SAVEFILE = "path/to/save/presentation.xml";
-    // Also assuming IOEX and LOADERR are error messages, define them
+    // output it
     private static final String IOEX = "Input/Output Exception: ";
     private static final String LOADERR = "Load Error";
     private static final String SAVEERR = "Save Error";
-    private static final String PAGENR = "Page Number:"; // Assuming it's a prompt for goToSlide
+    private static final String PAGENR = "Page Number:"; // page number
 
 
     public MenuController (Frame frame, Presentation pres)
@@ -71,7 +70,7 @@ public class MenuController extends MenuBar
     {
         Menu helpMenu = new Menu (HELP);
         helpMenu.add (mkMenuItem (ABOUT, e -> AboutBox.show (parent)));
-        setHelpMenu (helpMenu); // For portability (Motif, etc.)
+        setHelpMenu (helpMenu);
         return helpMenu;
     }
 
@@ -115,7 +114,7 @@ public class MenuController extends MenuBar
         presentation.setSlideNumber (pageNumber - 1);
     }
 
-    // Centralizes the creation of MenuItem with action listener using lambda expressions
+    // creation of menu item
     private MenuItem mkMenuItem (String name, ActionListener action)
     {
         MenuItem menuItem = new MenuItem (name, new MenuShortcut (name.charAt (0)));

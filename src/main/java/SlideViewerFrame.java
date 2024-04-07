@@ -8,13 +8,13 @@ public class SlideViewerFrame extends JFrame
 {
     private Presentation presentation;
 
-    // Define the missing constants as static final integers
+    // added width and height
     private static final int FRAME_WIDTH = 1200;
     private static final int FRAME_HEIGHT = 800;
 
     public SlideViewerFrame (Presentation presentation, String version)
     {
-        super (version); // Sets the title of the JFrame to the version
+        super (version);
         this.presentation = presentation;
         initializeFrame ();
     }
@@ -42,8 +42,8 @@ public class SlideViewerFrame extends JFrame
     private void setFrameProperties ()
     {
         setSize (FRAME_WIDTH, FRAME_HEIGHT);
-        setLocationRelativeTo (null); // Center the frame on the screen
-        setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE); // Ensure the application exits when the frame is closed
+        setLocationRelativeTo (null);
+        setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         setVisible (true);
     }
 }
