@@ -1,12 +1,13 @@
 package main.java;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Presentation<Slide>
+public class Presentation
 {
     private String showTitle; // Title of the presentation
-    private ArrayList<main.java.Slide> showList = new ArrayList<> (); // An ArrayList with Slides
+    private ArrayList<main.java.Slide> showList = new ArrayList<> (); // Slides
     private int currentSlideNumber = -1; // The slide number of the current Slide
 
     private List<main.java.PresentationObserver> observers = new ArrayList<> ();
@@ -69,7 +70,7 @@ public class Presentation<Slide>
         notifyObservers ();
     }
 
-    public void append (Slide slide)
+    public void append (main.java.Slide slide)
     {
         showList.add (slide);
         notifyObservers ();
@@ -84,7 +85,7 @@ public class Presentation<Slide>
         return null;
     }
 
-    public Slide getCurrentSlide ()
+    public main.java.Slide getCurrentSlide ()
     {
         return getSlide (currentSlideNumber);
     }
@@ -120,8 +121,4 @@ public class Presentation<Slide>
         return showList;
     }
 
-    public void append (main.java.Slide slide)
-    {
-
-    }
 }

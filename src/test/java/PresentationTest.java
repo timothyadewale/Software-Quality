@@ -1,7 +1,7 @@
 import main.java.Presentation;
 import main.java.Slide;
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test; // Use JUnit 4's Test annotation
 
 import static org.junit.Assert.*;
 
@@ -24,7 +24,7 @@ public class PresentationTest
     {
         presentation.setSlideNumber (0);
         presentation.nextSlide ();
-        assertEquals (1, presentation.getSlideNumber ());
+        assertEquals ("Slide number should be 1 after moving to the next slide", 1, presentation.getSlideNumber ());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class PresentationTest
     {
         presentation.setSlideNumber (0);
         presentation.prevSlide ();
-        assertEquals (0, presentation.getSlideNumber ()); // Still at the first slide
+        assertEquals ("Still at the first slide", 0, presentation.getSlideNumber ());
     }
 
     // Additional tests for edge cases and observer notifications
