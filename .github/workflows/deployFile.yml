@@ -1,4 +1,4 @@
-name: Build and Upload JAR to Google Cloud Storage
+name: Build and Upload JAR to Google
 
 on:
   push:
