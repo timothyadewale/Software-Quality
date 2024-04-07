@@ -4,28 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5a2bc2c-6a2c-4fca-b065-cf7178bd2231" name="Changes" comment="fixed bugs in code" />
+    <list default="true" id="6aff8acc-ae12-4536-ad08-804bf44990b1" name="Changes" comment="Added CI pipeline and code fixes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Interface" />
-        <option value="Tag Library Descriptor" />
-      </list>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2de0DCxeOWK9I4cSNIx13YxiwE5" />
+  <component name="ProjectId" id="2emn1ldiXGmejAonkEjfMnjqqCk" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -35,195 +26,85 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/timin/Software Quality/Software-Quality/configuration_1_3.dtd",
+    "last_opened_file_path": "C:/Users/timin/Software Quality/Software-Quality",
     "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.externalResources",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.java" />
-    </key>
-  </component>
-  <component name="RunManager" selected="JUnit.BitmapItemTest">
-    <configuration name="BitmapItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Jabberpoint-IT" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BitmapItemTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CompositeItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Jabberpoint-IT" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CompositeItemTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DemoPresentationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Jabberpoint-IT" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DemoPresentationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Jabberpoint-IT" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemFactoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PresentationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Jabberpoint-IT" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PresentationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.BitmapItemTest" />
-        <item itemvalue="JUnit.PresentationTest" />
-        <item itemvalue="JUnit.ItemFactoryTest" />
-        <item itemvalue="JUnit.DemoPresentationTest" />
-        <item itemvalue="JUnit.CompositeItemTest" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="d5a2bc2c-6a2c-4fca-b065-cf7178bd2231" name="Changes" comment="" />
-      <created>1710353114869</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1710353114869</updated>
-      <workItem from="1710353115967" duration="37000" />
-      <workItem from="1710353170844" duration="27000" />
-      <workItem from="1712350455412" duration="3681000" />
-      <workItem from="1712392535096" duration="26823000" />
-    </task>
-    <task id="LOCAL-00001" summary="Refactor the jabberpoint code">
-      <created>1712416947619</created>
+    <task id="LOCAL-00001" summary="Added CI pipeline">
+      <created>1712516772538</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1712416947619</updated>
+      <updated>1712516772538</updated>
     </task>
-    <task id="LOCAL-00002" summary="Refactor the jabberpoint code">
-      <created>1712417005542</created>
+    <task id="LOCAL-00002" summary="Added CI pipeline">
+      <created>1712517147664</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1712417005543</updated>
+      <updated>1712517147664</updated>
     </task>
-    <task id="LOCAL-00003" summary="Created text and fixed bugs">
-      <created>1712436812840</created>
+    <task id="LOCAL-00003" summary="Added CI pipeline">
+      <created>1712517458919</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1712436812840</updated>
+      <updated>1712517458919</updated>
     </task>
-    <task id="LOCAL-00004" summary="Added automated testing file, code fixes">
-      <created>1712488562062</created>
+    <task id="LOCAL-00004" summary="Added CI pipeline">
+      <created>1712517861648</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1712488562062</updated>
+      <updated>1712517861648</updated>
     </task>
-    <task id="LOCAL-00005" summary="fixed test folder">
-      <created>1712489266417</created>
+    <task id="LOCAL-00005" summary="Added CI pipeline">
+      <created>1712518068558</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1712489266417</updated>
+      <updated>1712518068558</updated>
     </task>
-    <task id="LOCAL-00006" summary="fixed pom.xml">
-      <created>1712489785808</created>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6aff8acc-ae12-4536-ad08-804bf44990b1" name="Changes" comment="Added CI pipeline" />
+      <created>1712518409716</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712518409716</updated>
+      <workItem from="1712518411256" duration="1858000" />
+    </task>
+    <task id="LOCAL-00006" summary="Added CI pipeline">
+      <created>1712518839447</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1712489785808</updated>
+      <updated>1712518839447</updated>
     </task>
-    <task id="LOCAL-00007" summary="fixed pom.xml">
-      <created>1712490371408</created>
+    <task id="LOCAL-00007" summary="Added CI pipeline and code fixes">
+      <created>1712519192977</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1712490371408</updated>
+      <updated>1712519192977</updated>
     </task>
-    <task id="LOCAL-00008" summary="fixed pom.xml">
-      <created>1712490540375</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1712490540375</updated>
-    </task>
-    <task id="LOCAL-00009" summary="fixed bugs in code">
-      <created>1712491928661</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1712491928661</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fixed bugs in code">
-      <created>1712493178561</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1712493178561</updated>
-    </task>
-    <task id="LOCAL-00011" summary="fixed bugs in code">
-      <created>1712493656111</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1712493656111</updated>
-    </task>
-    <task id="LOCAL-00012" summary="fixed bugs in code">
-      <created>1712493955565</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1712493955565</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor the jabberpoint code" />
-    <MESSAGE value="Created text and fixed bugs" />
-    <MESSAGE value="Added automated testing file, code fixes" />
-    <MESSAGE value="fixed test folder" />
-    <MESSAGE value="fixed pom.xml" />
-    <MESSAGE value="fixed bugs in code" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs in code" />
+    <MESSAGE value="Added CI pipeline" />
+    <MESSAGE value="Added CI pipeline and code fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CI pipeline and code fixes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
