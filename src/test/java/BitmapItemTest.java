@@ -9,14 +9,14 @@ public class BitmapItemTest
     @Test
     public void testLoadImageValidPath ()
     {
-        BitmapItem bitmapItem = new BitmapItem (1, "path/to/valid/image.jpg");
+        BitmapItem bitmapItem = new BitmapItem (1, "./JabberPoint.gif");
         assertNotNull (bitmapItem.bufferedImage, "Image should be loaded");
     }
 
     @Test
     public void testLoadImageInvalidPath ()
     {
-        BitmapItem bitmapItem = new BitmapItem (1, "invalid/path/image.jpg");
+        BitmapItem bitmapItem = new BitmapItem (1, "./fake/JabberPoint.gif");
         assertNull (bitmapItem.bufferedImage, "Image should not be loaded");
     }
 }
