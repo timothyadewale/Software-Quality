@@ -27,13 +27,14 @@
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>false</failsOnError>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <dependencies>
+                    <!-- Specify the Checkstyle version -->
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>8.45</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <!-- Maven Surefire Plugin -->
