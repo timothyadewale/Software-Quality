@@ -54,4 +54,9 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
 
+    steps:
+      - name: Check workspace path
+        run: echo "The workspace directory is ${{ github.workspace }}"
+
+
 
