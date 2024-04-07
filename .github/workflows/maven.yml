@@ -46,16 +46,11 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
-      with:
-        languages: 'java'
+    - name: Run Checkstyle
+      run: mvn checkstyle:check
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
 
-    - name: Check workspace path
-      run: echo "The workspace directory is ${{ github.workspace }}"
+
 
 
 
