@@ -2,7 +2,8 @@ import main.java.DemoPresentation;
 import main.java.Presentation;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DemoPresentationTest
 {
@@ -15,15 +16,16 @@ public class DemoPresentationTest
         demoPresentation.loadFile (presentation, "");
 
         // check number of slides
-        assertEquals ("Expected number of slides in demo presentation", 3, presentation.getSize ());
-
+        assertEquals (3, presentation.getSize (), "Expected number of slides in demo presentation");
     }
 
-    @Test(expected = UnsupportedOperationException.class)
+    @Test
     public void testSaveFileUnsupportedOperation ()
     {
         DemoPresentation demoPresentation = new DemoPresentation ();
         Presentation presentation = new Presentation ();
-        demoPresentation.saveFile (presentation, "anyPath");
+
+        // Use assertThrows to check that an exception is thrown
+        assertThrows (UnsupportedOperationException.class, () -> demoPresentation.saveFile (presentation, "anyPath"));
     }
 }

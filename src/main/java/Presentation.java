@@ -3,16 +3,16 @@ package main.java;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Presentation
+public class Presentation<Slide>
 {
     private String showTitle; // Title of the presentation
-    private ArrayList<Slide> showList = new ArrayList<> (); // An ArrayList with Slides
+    private ArrayList<main.java.Slide> showList = new ArrayList<> (); // An ArrayList with Slides
     private int currentSlideNumber = -1; // The slide number of the current Slide
 
-    private List<PresentationObserver> observers = new ArrayList<> ();
+    private List<main.java.PresentationObserver> observers = new ArrayList<> ();
 
     // Attach an observer to the Presentation
-    public void attach (PresentationObserver observer)
+    public void attach (main.java.PresentationObserver observer)
     {
         observers.add (observer);
         // Optionally, you might want to immediately update the observer with the current state
@@ -25,8 +25,8 @@ public class Presentation
     // Notify all observers of a change
     private void notifyObservers ()
     {
-        Slide currentSlide = getCurrentSlide ();
-        for (PresentationObserver observer : observers)
+        main.java.Slide currentSlide = getCurrentSlide ();
+        for (main.java.PresentationObserver observer : observers)
         {
             observer.update (this, currentSlide);
         }
@@ -75,7 +75,7 @@ public class Presentation
         notifyObservers ();
     }
 
-    public Slide getSlide (int number)
+    public main.java.Slide getSlide (int number)
     {
         if (number >= 0 && number < showList.size ())
         {
@@ -115,8 +115,13 @@ public class Presentation
         return currentSlideNumber;
     }
 
-    public List<Slide> getSlides ()
+    public List<main.java.Slide> getSlides ()
     {
         return showList;
+    }
+
+    public void append (main.java.Slide slide)
+    {
+
     }
 }

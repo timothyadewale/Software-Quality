@@ -2,7 +2,8 @@ import main.java.Accessor;
 import main.java.DemoPresentation;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AccessorTest
 {
@@ -10,15 +11,18 @@ public class AccessorTest
     @Test
     public void testGetAccessorValidType ()
     {
-        // getting a demopresentation
+        // Getting a demopresentation
         Accessor accessor = Accessor.getAccessor ("demo");
-        assertTrue (accessor instanceof DemoPresentation);
+        assertTrue (accessor instanceof DemoPresentation, "The accessor should be an instance of DemoPresentation");
     }
 
-    @Test(expected = UnsupportedOperationException.class)
+    @Test
     public void testGetAccessorInvalidType ()
     {
-        // expecting an assertion
-        Accessor.getAccessor ("invalidType");
+        // Expecting an exception
+        assertThrows (UnsupportedOperationException.class, () ->
+        {
+            Accessor.getAccessor ("invalidType");
+        }, "Accessing with an invalid type should throw UnsupportedOperationException");
     }
 }
