@@ -1,8 +1,7 @@
 import main.java.BitmapItem;
 import org.junit.jupiter.api.Test;
 
-
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BitmapItemTest
 {
@@ -11,15 +10,13 @@ public class BitmapItemTest
     public void testLoadImageValidPath ()
     {
         BitmapItem bitmapItem = new BitmapItem (1, "path/to/valid/image.jpg");
-        assertNotNull ("Image should be loaded", bitmapItem.bufferedImage);
+        assertNotNull (bitmapItem.bufferedImage, "Image should be loaded");
     }
 
     @Test
     public void testLoadImageInvalidPath ()
     {
         BitmapItem bitmapItem = new BitmapItem (1, "invalid/path/image.jpg");
-        assertNull ("Image should not be loaded", bitmapItem.bufferedImage);
+        assertNull (bitmapItem.bufferedImage, "Image should not be loaded");
     }
-
-
 }
